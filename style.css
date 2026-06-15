@@ -1,0 +1,436 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --color-primary: #FFF4DE;
+    --color-secondary: #F7D794;
+    --color-accent: #C96A1B;
+    --color-button: #F5A623;
+    --color-button-hover: #E79A1A;
+
+    --color-white: #FFFFFF;
+
+    --color-text: #2A1B14;
+    --color-text-light: #6B4A33;
+
+    --shadow-sm: 0px 0px 10px rgba(0,0,0,0.08);
+    --shadow-md: 0px 4px 15px rgba(0,0,0,0.12);
+    --shadow-lg: 0px 8px 25px rgba(0,0,0,0.15);
+
+    --radius-sm: 10px;
+    --radius-md: 14px;
+    --radius-lg: 20px;
+
+    --transition: 0.3s ease;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: var(--color-primary);
+    overflow-x: hidden;
+}
+
+section{
+    padding: 32px 8%;
+}
+
+.btn-default{
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-button);
+    color: var(--color-text);
+    border-radius: var(--radius-md);
+    padding: 12px 20px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition);
+}
+
+.btn-default:hover{
+    background-color: var(--color-button-hover);
+    transform: translateY(-2px);
+}
+
+.social-media-buttons{
+    display: flex;
+    gap: 16px;
+}
+
+.social-media-buttons a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 45px;
+    height: 45px;
+
+    background-color: var(--color-white);
+    color: var(--color-accent);
+
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 1.2rem;
+
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition);
+}
+
+.social-media-buttons a:hover{
+    transform: translateY(-4px);
+}
+
+.section-title{
+    color: var(--color-accent);
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+.section-subtitle{
+    color: var(--color-text);
+    font-size: 2.3rem;
+    text-align: center;
+}
+
+header{
+    width: 100%;
+    padding: 16px 8%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background-color: rgba(255,244,222,0.95);
+    backdrop-filter: blur(12px);
+}
+
+#navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo{
+    height: 90px;
+    width: auto;
+}
+
+#nav_list{
+    display: flex;
+    list-style: none;
+    gap: 40px;
+}
+
+.nav_item a{
+    text-decoration: none;
+    color: var(--color-text-light);
+    font-weight: 600;
+    transition: .3s;
+}
+
+.nav_item a:hover{
+    color: var(--color-accent);
+}
+
+.nav_item.active a{
+    color: var(--color-text);
+    border-bottom: 3px solid var(--color-button);
+}
+
+#mobile_btn,
+#mobile_menu{
+    display: none;
+}
+
+#home{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: calc(100vh - 90px);
+    gap: 40px;
+    position: relative;
+}
+
+#cta{
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+#cta .title{
+    font-size: 4rem;
+    color: var(--color-text);
+    line-height: 1.1;
+}
+
+#cta .title span{
+    color: var(--color-accent);
+}
+
+#cta .description{
+    font-size: 1.1rem;
+    color: var(--color-text-light);
+}
+
+#cta_buttons{
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+#cta_buttons a{
+    text-decoration: none;
+}
+
+#phone_button{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    background: var(--color-white);
+    padding: 8px 14px;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    color: var(--color-text);
+}
+
+#banner{
+    width:100%;
+    display: flex;
+    justify-content: right;
+}
+
+#banner img{
+    width: 100%;
+    max-width: 500px;
+}
+
+.shape{
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+
+    width: 50%;
+    height: 100%;
+
+    background-color: var(--color-secondary);
+    border-radius: 40% 30% 0% 20%;
+}
+
+/* =========================
+   CARDÁPIO
+========================= */
+
+#menu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 5%;
+}
+
+#menu-gallery{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.menu-card{
+    width: 100%;
+    max-width: 620px;
+    overflow: hidden;
+    border-radius: 18px;
+    background: white;
+    box-shadow: var(--shadow-lg);
+    transition: transform .3s ease;
+}
+
+.menu-card:hover{
+    transform: scale(1.01);
+}
+
+.menu-card img{
+    width: 100%;
+    display: block;
+    object-fit: contain;
+}
+
+/* =========================
+   AVALIAÇÕES
+========================= */
+
+#testimonials{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.testimonial_chef{
+    width: 420px;
+}
+
+#testimonials_content{
+    width: 50%;
+}
+
+#feedbacks{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.feedback{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    background-color: white;
+    padding: 18px;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+}
+
+.feedback-avatar{
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    background-color: var(--color-secondary);
+    margin-top: 40px;
+}
+
+footer img{
+    width: 100%;
+}
+
+#footer_items{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8% 24px;
+}
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media screen and (max-width: 992px){
+
+    #home{
+        flex-direction: column;
+        text-align: center;
+        padding-top: 30px;
+    }
+
+    #cta{
+        width: 100%;
+        align-items: center;
+    }
+
+    #banner{
+        width: 100%;
+    }
+
+    .shape{
+        display: none;
+    }
+
+    #testimonials{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .testimonial_chef{
+        display: none;
+    }
+
+    #testimonials_content{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px){
+
+    .logo{
+        height: 75px;
+    }
+
+    #cta .title{
+        font-size: 2.7rem;
+    }
+
+    #cta_buttons{
+        flex-direction: column;
+        width: 100%;
+    }
+
+    #cta_buttons a{
+        width: 100%;
+        justify-content: center;
+    }
+
+    .menu-card{
+        max-width: 95%;
+    }
+
+    .feedback{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #footer_items{
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 510px){
+
+    .logo{
+        height: 65px;
+    }
+
+    #cta .title{
+        font-size: 2.2rem;
+    }
+
+    .section-subtitle{
+        font-size: 1.7rem;
+    }
+
+    #phone_button button{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 650px){
+
+    #navbar .btn-default{
+        display: none;
+    }
+
+}
